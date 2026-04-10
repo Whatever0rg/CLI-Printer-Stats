@@ -1,12 +1,8 @@
 default: build
 
 build: clean
-	g++ main.cpp -o fetch
-	./fetch
+	gcc main.c -lcurl -o CLI_Printer
+	./CLI_Printer
 
 clean:
-	rm -rf fetch
-	rm -rf response.json
-
-test: build
-    ./curl https://freegeoip.app/json/
+	rm -f CLI_Printer
